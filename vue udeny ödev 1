@@ -1,0 +1,50 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="exercise">
+   <!-- 1) Interpolation yani {{}} Syntax'ını kullanarak <p> elementinin içeriğini Name ve Age verileriyle doldurun-->
+    <p v-once>VueJS Muazzam bir Framework ve de isim {{name}} yaş ise {{age}}</p>
+    <!-- 2) Yaşınızı 5 ile çarpıp <p> içerisinde yazdırınız -->
+    
+    <p>{{numgenerator()}}</p>
+
+    <!-- 3) Fonksiyon çağırarak 0 ile 1 arasında bir sayı üretip <p> içerisinde yazdırınız (Math.random()) -->
+    <p>   <a v-bind:href="img">  link     </a>    </p>
+
+    <!-- 4) Google üzerinden bulacağınız herhangi bir fotoğrafı <img> elementinde gösterme işlemini yapınızı. Bunu yaparken "src" attribute' una bind etmeyi unutmayınız -->
+
+    <!-- 5) Name değişkeninin değerinin <input /> içine yazdığınız değer ile anlık olarak değiştirilmesini sağlayınız. ("value" attribute kullanarak) -->
+    <div>
+        <input type="text" v-on:input="changetitle">
+        <p>
+            {{name}}
+        </p>
+    </div>
+</div>
+
+
+
+
+
+new Vue ({
+   el:"#exercise" ,
+   data: {
+   name:"seymen bugay" ,
+   age:20,
+   img: "https://ttmotor.com.tr/site/ttadmin/theme/banner/custom/subbikes/564.jpg"
+   }     ,
+   methods:  {
+      numgenerator: function(){
+         return( Math.random() );
+      },
+      changetitle: function(event){
+         this.name=event.target.value  ;
+      }
+   
+   
+   
+   
+   
+   
+   }
+
+})
